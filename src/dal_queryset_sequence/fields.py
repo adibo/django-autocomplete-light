@@ -6,7 +6,7 @@ from dal_contenttypes.fields import (
 )
 
 from django import forms
-from django.conf.urls import url
+from django.conf.urls import re_path
 from django.contrib.contenttypes.models import ContentType
 
 from queryset_sequence import QuerySetSequence
@@ -170,5 +170,7 @@ class GenericForeignKeyModelField(QuerySetSequenceModelField):
 
         auto_view = type('Autoview{}{}'.format(form.__name__, self.field_id),
                          (self.view_obj,), {})
-        return url(r'^{}_{}_autocomp$'.format(form.__name__, self.field_id),
-                   auto_view.as_view(queryset=self.queryset), name=url_name)
+        return re_path(
+            r'^{}_{}_autocomp$'.format(form.__name__, self.field_id),
+            auto_view.as_view(queryset=self.queryset),
+            name=url_name)

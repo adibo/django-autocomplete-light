@@ -20,7 +20,7 @@ class Select2QuerySetSequenceView(BaseQuerySetSequenceView, Select2ViewMixin):
 
     Example usage::
 
-        url(
+        re_path(
             '^your-generic-autocomplete/$',
             autocomplete.Select2QuerySetSequenceView.as_view(
                 queryset=autocomplete.QuerySetSequence(

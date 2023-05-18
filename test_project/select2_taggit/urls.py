@@ -1,12 +1,12 @@
 from dal import autocomplete
 
-from django.conf.urls import url
+from django.conf.urls import re_path
 
 from taggit.models import Tag
 
 
 urlpatterns = [
-    url(
+    re_path(
         'test-autocomplete/$',
         autocomplete.Select2QuerySetView.as_view(
             queryset=Tag.objects.all(),

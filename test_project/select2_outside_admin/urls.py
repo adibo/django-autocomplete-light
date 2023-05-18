@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.conf.urls import re_path
 
 from .views import UpdateView
 
 
 urlpatterns = [
-    url(
+    re_path(
         r'^$',
         UpdateView.as_view(),
         name='select2_outside_admin',

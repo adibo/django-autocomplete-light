@@ -1,6 +1,6 @@
 from dal import autocomplete
 
-from django.conf.urls import url
+from django.conf.urls import re_path
 
 
 class ListWithForwardsView(autocomplete.Select2ListView):
@@ -19,7 +19,7 @@ class ListWithForwardsView(autocomplete.Select2ListView):
 
 
 urlpatterns = [
-    url(
+    re_path(
         '^forward_different_fields/$',
         ListWithForwardsView.as_view(),
         name='forward_different_fields'

@@ -9,7 +9,7 @@ import django
 from django import forms
 from django import http
 from django import test
-from django.conf.urls import url
+from django.conf.urls import re_path
 try:
     from django.urls import reverse
 except ImportError:
@@ -22,7 +22,7 @@ import six
 
 
 urlpatterns = [
-    url(
+    re_path(
         r'^test-url/$',
         mock.Mock(),
         name='test_url'

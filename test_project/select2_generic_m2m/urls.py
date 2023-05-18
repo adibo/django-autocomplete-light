@@ -1,6 +1,6 @@
 from dal import autocomplete
 
-from django.conf.urls import url
+from django.conf.urls import re_path
 from django.contrib.auth.models import Group
 from django.views import generic
 
@@ -9,7 +9,7 @@ from .models import TModel
 
 
 urlpatterns = [
-    url(
+    re_path(
         '^select2-generic-m2m/$',
         autocomplete.Select2QuerySetSequenceView.as_view(
             queryset=autocomplete.QuerySetSequence(
@@ -19,7 +19,7 @@ urlpatterns = [
         ),
         name='select2_generic_m2m',
     ),
-    url(
+    re_path(
         'test/(?P<pk>\d+)/$',
         generic.UpdateView.as_view(
             model=TModel,
