@@ -8,7 +8,7 @@ from dal.widgets import WidgetMixin
 
 from django import forms
 from django.contrib.contenttypes.models import ContentType
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 
 class QuerySetSequenceSelectMixin(WidgetMixin):
@@ -16,7 +16,7 @@ class QuerySetSequenceSelectMixin(WidgetMixin):
 
     def label_from_instance(self, obj):
         """Convert an object into string. Override it to customize display."""
-        return force_text(obj)
+        return force_str(obj)
 
     def filter_choices_to_render(self, selected_choices):
         """Overwrite self.choices to exclude unselected values."""
