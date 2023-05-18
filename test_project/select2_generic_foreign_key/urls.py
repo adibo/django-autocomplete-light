@@ -1,6 +1,6 @@
 # from dal import autocomplete
 
-from django.conf.urls import re_path
+from django.urls import re_path
 # from django.contrib.auth.models import Group
 from django.views import generic
 
